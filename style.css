@@ -130,3 +130,8 @@ form{
         font-size: 16px;
     }
 }
+#map{
+    background: url(temporary.png);
+    background-size: 100%;
+}
+    
