@@ -131,7 +131,7 @@ form{
     }
 }
 #map{
-    background: url(temporary.png);
+    background-image: url(temporary.png);
     background-size: 100%;
 }
     
