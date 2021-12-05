@@ -30,11 +30,11 @@
         <div id="data_container">
           <div class="data_object">
             <p>IP ADDRESS</p>
-            <h2 id="ip"></h2>
+            <h2 id="ip">192.212.174.101</h2>
           </div>
           <div class="data_object">
             <p>LOCATION</p>
-            <h2 id="loc"></h2>
+            <h2 id="loc">Brooklyn, NY 10001</h2>
           </div>
           <div class="data_object">
             <p>TIMEZONE</p>
@@ -55,10 +55,12 @@
             iconAnchor: [16, 40]
         })
 
-        var map = L.map('map', { zoomControl: false }).setView([50, 0], 20);
+        var map = L.map('map', { zoomControl: false }).setView([43.731, 7.414], 20);
 
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=lwNkwAaKSon9Z5vHM0AV').addTo(map);
 
+        var marker = L.marker([43.731, 7.414], {icon: myIcon}).addTo(map);
+      
         $.getJSON('https://api.ipify.org?format=json', function(data){
           document.getElementById("ip").value = data.ip;
         })
@@ -66,7 +68,7 @@
         ipData();
 
         function ipData(){
-          try{map.removeLayer(marker);}catch(error){}
+          map.removeLayer(marker);
           ip = document.getElementById("input").value;
           $.getJSON('https://geo.ipify.org/api/v2/country,city?apiKey=at_PCwcj39VXVeioXkHhahPofw5OtamL&ipAddress='+ip, function(data){
             var marker = L.marker([data.location.lat, data.location.lng], {icon: myIcon}).addTo(map);
