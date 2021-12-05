@@ -68,7 +68,7 @@
         function ipData(){
           try{map.removeLayer(marker);}catch(error){}
           ip = document.getElementById("input").value;
-          $.getJSON('https://geo.ipify.org/api/v2/country,city?apiKey=at_PCwcj39VXVeioXkHhahPofw5OtamL&ipAddress='+ip, function(data){
+          $.getJSON('https://geo.ipify.org/api/v2/country,city?apiKey=at_TI9N57YbZMcJuWO4gceH10de9s5S3&ipAddress='+ip, function(data){
             var marker = L.marker([data.location.lat, data.location.lng], {icon: myIcon}).addTo(map);
             map.setView([data.location.lat+0.005, data.location.lng], 15);
 
