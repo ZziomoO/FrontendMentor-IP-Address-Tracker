@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+header{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+#form{
+    background: url(images/pattern-bg.png);
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#data_container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    min-height: 140px;
+    background-color: white;
+    width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+p{
+    font-size: 10px;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+h1{
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+h2{
+    font-weight: 500;
+    font-size: 20px;
+}
+.data_object{
+    min-height: 140px;
+    width: 25%;
+    padding: 25px;
+    box-sizing: border-box;
+    position: relative;
+}
+.data_object::after{
+    content: "";
+    background: #ddd;
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    height: 50%;
+    width: 1px;
+}
+#last::after{
+    background-color: white;
+}
+input[type=text]{
+    width: 350px;
+    height: 35px;
+    box-sizing: border-box;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    color: #888 !important;
+}
+input[type=text]::placeholder{
+    color: #888 !important;
+}
+input[type=text], input[type=text]:active, input[type=text]:focus{
+    outline: none;
+    border: none;
+}
+form{
+    display: flex;
+}
+#button{
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+}
+#button:hover{
+    background-color: #333;
+}
+#map{position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: 0;}
+#centre{
+    height: 1px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (max-width: 900px){
+    input[type=text]{
+        width: calc(90vw - 35px);
+    }
+    .data_object::after{
+        display: none;
+    }
+    #data_container{
+        width: 90%;
+        flex-direction: column;
+        position: fixed;
+        top: 120px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .data_object{
+        width: 100%;
+        min-height: auto;
+        padding: 5px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 300px){
+    h1{
+        font-size: 16px;
+    }
+}
